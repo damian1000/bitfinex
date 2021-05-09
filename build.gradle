@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id "org.jetbrains.kotlin.jvm" version "1.4.32"
+}
+
+group = 'bitfinex'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.1'
+
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
